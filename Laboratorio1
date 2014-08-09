@@ -1,0 +1,51 @@
+#include "stdafx.h"
+#include <iostream>
+#include "stdlib.h"
+#include "stdio.h"
+#include "conio.h"
+
+
+using namespace std;
+int main()
+{int N,i,S;
+system("color f3");
+cout << "Jorgeduardo Roca";
+cout << "\n\npares hasta N";
+cout << "\n\ningrese un numero: ";
+cin >> N ;
+S=0;
+for(i=1;i<=N;i++)if(i%2!=0)S=S+i;
+cout << "\n\nla suma de los impares hasta " << N << " es " << S; 
+cout<<"\n";
+system("pause");
+system("cls");
+
+cout << "\n\nN primeros pares";
+cout <<"\n\ningrese un numero: ";
+cin >> N;
+S=0;int c=1;
+for(i=1;i<=N;i++)
+	{
+	S=S+c;
+	c=c+2;
+	}
+cout << "\n\nla suma de los " << N << " primeros impares es " << S; 
+cout<<"\n";
+system("pause");
+system("cls");
+
+cout << "\n\nsuma usando while";
+S=0;i=1;
+cout <<"\n\ningrese un numero: ";
+cin >> N;
+while(N>0)
+{for(i=1;i<=N;i++)
+	{if(i%2!=0){S=S+i;}
+	}
+cout << "\n\nla suma es " << S; 
+cout <<"\n\ningrese un numero: ";
+cin >> N;
+}
+cout<<"\n";
+system("pause");
+}
