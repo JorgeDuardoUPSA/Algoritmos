@@ -1,0 +1,115 @@
+// Jorgeduardo Roca
+//	Laboratorio 6
+//
+
+#include "stdafx.h"
+#include "stdlib.h"
+#include "conio.h"
+#include <string>
+#include <iostream>
+#define N 100
+#define M 100
+using namespace std;
+struct vector{
+	string Vec[N];
+};
+void cargar_matriz(int A[N][M],int n,int m)
+{for(int c=0;c<n;c++)
+	for(int i=0;i<m;i++)
+	{cout<<"Mat["<<c<<"]["<<i<<"]: ";
+	 cin>>A[c][i];
+	}
+}
+
+void mostrar_matriz(int A[N][M],int n,int m)
+{for(int c=0;c<n;c++)
+	{for(int i=0;i<m;i++)
+		cout<<"Mat["<<c<<"]["<<i<<"]: "<<A[c][i]<<" ";
+	 cout<<"\n\n";
+	}
+}
+
+void sumar_matriz(int A[N][M],int B[N][M],int C[N][M],int n,int m)
+{for(int c=0;c<n;c++)
+	for(int i=0;i<m;i++)
+		C[c][i]=A[c][i]+B[c][i];
+	
+}
+
+void fibonacci(int F[N][M],int n,int m)
+{int x=0,y=1;
+ for(int c=0;c<n;c++)
+	for(int i=0;i<m;i++)
+		{F[c][i]=x+y;
+		 x=y;
+		 y=F[c][i];
+		}	
+}
+
+void palabra(vector V[],int n,vector Y[],int m)
+{
+}
+
+
+
+void main()
+{int n,m,i,A[N][M],B[N][M],C[N][M],F[N][M],opcion,s=1;vector V[N],Y[N];
+system("color 3f");
+do{system ("cls");
+cout<<"\n\n1-->Sumar 2 matrices";
+cout<<"\n\n2-->Fibnonacci";
+cout<<"\n\n3-->Ejericio 12 del practico";
+cout<<"\n\nOpcion: ";
+cin>> opcion;
+switch(opcion)
+{
+case 1:
+	cout<<"ingresar cantidad de filas: ";
+	cin>>n;
+	cout<<"\ningresar cantidad de columnas: ";
+	cin>>m;
+	cout<<"\n\n";
+	cargar_matriz(A,n,m);
+	cout<<"\n\n";
+	cargar_matriz(B,n,m);
+	cout<<"\n\n";
+	sumar_matriz(A,B,C,n,m);
+	mostrar_matriz(C,n,m);
+	cout<<"\n\n";
+	system("pause");
+break;
+case 2:
+	cout<<"ingresar cantidad de filas: ";
+	cin>>n;
+	cout<<"\ningresar cantidad de columnas: ";
+	cin>>m;
+	cout<<"\n\n";
+	fibonacci(F,n,m);
+	mostrar_matriz(F,n,m);
+	cout<<"\n\n";
+	system("pause");
+break;
+case 3: cout<<"INCOMPLETO";
+		cout<<"\n\n";
+		cout<<"ingresar cantidad de silabas: ";
+		cin>>n;
+		cout<<"ingresar cantidad de palabras: ";
+		cin>>m;
+		for(i=0;i<m;i++)
+		{	for(int c=0;c<n;c++)
+			{cout<<"Pal["<<i<<"]: "<<" ";
+			 cin>> V[i].Vec[c];
+			}
+		cout<<"\n\n";
+		}
+		palabra(V,n,Y,m);
+		system("pause");
+break;
+default:s=0; cout<<"SALIR";
+break;
+}
+}while(s==1);
+cout<<"\n\n";
+system("pause");
+}
+
