@@ -1,0 +1,80 @@
+// practico 5.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "conio.h"
+#include "iostream"
+#include "string"
+#define N 100
+using namespace std;
+
+struct vector {
+	int vec[N];
+};
+
+struct empleado{
+	int nro;
+	string nombre;
+	int genero;
+	float sueldo;
+};
+
+void cargar(int n, vector v[])
+{
+	for(int i=0;i<n;i++)
+	{cout<<"\n\n";
+		for(int j=0;j<n;j++)
+		{cout<<"ingresar v["<<i<<"].["<<j<<"]: ";
+		 cin>>v[i].vec[j];
+		}
+	}
+}
+
+void mostrar(int n, vector v[])
+{
+	for(int i=0;i<n;i++)
+	{cout<<"\n\n";
+		for(int j=0;j<n;j++)
+		{cout<<"\nv["<<i<<"].["<<j<<"]: ";
+		 cout<<v[i].vec[j];
+		}
+	}
+}
+
+void invertir(int n, vector v[])
+{int aux;
+	for(int i=0;i<n*0.5;i++)
+		for(int j=0;j<n;j++)
+		{
+			aux=v[n-1-i].vec[n-1-j];
+			v[n-1-i].vec[n-1-j]=v[i].vec[j];
+			v[i].vec[j]=aux;
+		}
+}
+
+
+void main()
+{vector v[N];int n;
+ empleado X[N];
+ cout<<"ingrese el numero de elementos del array";
+ cin>> n;
+ for(int i=0;i<n-1;i++)
+ {
+  cout<<"Nro: ";
+  cin>>X[i+1].nro;
+  cout<<"Nombre: ";
+  cin>>X[i+1].nombre;
+    cout<<"1-->Masculino 2-->Femenino";
+  cin>>X[i+1].genero;
+    cout<<"Genero: ";
+  cout<<"Sueldo: ";
+  cin>>X[i+1].sueldo;
+  cout<<"\n\n";
+ }
+
+ cargar(n,v);
+ invertir(n,v);
+ mostrar(n,v);
+ cout<<"\n\n";
+ system("pause");
+}
