@@ -1,0 +1,26 @@
+// prac 1 ej 3.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "conio.h"
+#include "iostream"
+#include "stdlib.h"
+using namespace std;
+
+void main()
+{int n,N,x;
+do
+{	cout<<"\n\nIngrese un Numero: ";
+	cin>> n;
+}while(n<0);
+x=n;N=0;
+do
+{	N=N*10;
+	N=N+x%10;
+	x=x/10;
+}while(x>0);
+cout<< "\n\nEl numero " << n << "invertido, es: " << N;
+cout<< "\n\n";
+system("pause");
+}
+
