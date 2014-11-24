@@ -1,0 +1,42 @@
+// prac 1 eje 2.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "iostream"
+#include "math.h"
+using namespace std;
+
+int sinrepetidos(int x);
+
+void main()
+{int a;
+cout<< "\n\nIngrese un numero: ";
+cin>> a;
+
+cout<< "\n\nEl numero sin repetidos es: "<<sinrepetidos(a);
+cout<<"\n\n";
+system("pause");
+}
+
+int sinrepetidos(int x)
+{int aux,d1,d2,tempo,c,sr=0,p=0;
+aux=x;
+while(aux>0)
+	{
+		d1=aux%10;
+		aux=aux/10;
+		tempo=aux;
+		c=0;
+		while(tempo>0)
+			{d2=tempo%10;
+			if(d1==d2)
+				c++;
+				tempo =tempo/10;
+			}
+			if(c==0)
+			{sr=sr+d1*pow(10.0,p);
+			p++;
+			}
+	}
+
+return(sr);
