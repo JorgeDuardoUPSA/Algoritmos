@@ -1,0 +1,35 @@
+// Jorgeduardo
+//
+
+#include "stdafx.h"
+#include "iostream"
+#include "conio.h"
+#define N 100
+using namespace std;
+
+struct Vector{
+	int vec[N];
+};
+
+
+void main()
+{int n,m; Vector V[N]; int a=0,s=1;
+system("color 3f");
+cout<< "Ingrese el Tamano del vector externo: ";
+cin>> n;
+cout<< "Ingrese el Tamano del vector interno: ";
+cin>> m;
+for(int i=0;i<n;i++)
+	for(int c=0;c<m;c++)
+	 {V[i].vec[c]=a;
+	  a=s;
+	  s=s+V[i].vec[c];
+	 }
+for(int i=0;i<n;i++)
+	for(int c=0;c<m;c++)
+	{cout<<"\n\nV["<<i<<"].vec["<<c<<"]: "<<V[i].vec[c];
+	}
+cout<<"\n\n";
+system("pause");	
+}
+
